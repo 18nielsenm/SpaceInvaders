@@ -291,6 +291,7 @@
 				3FCE87A01C0E5A5A004DA51E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

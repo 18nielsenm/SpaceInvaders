@@ -8,17 +8,58 @@
 
 import SpriteKit
     var last = 0
+    var first = 1
+    let enemyMovement1 = SKAction.moveByX(45, y: 0, duration: 1)
+    let enemyMovement2 = SKAction.moveByX(-90, y: 0, duration: 1)
+
+
+// __________________________________________________________________________________________________
+
+let spriteEnemy1 = SKSpriteNode(imageNamed:"Pancakes")
+let spriteEnemy2 = SKSpriteNode(imageNamed: "Pancakes")
+let spriteEnemy3 = SKSpriteNode(imageNamed: "Pancakes")
+
+    let myLabel = SKLabelNode(fontNamed:"Chalkduster")
+
+// __________________________________________________________________________________________________
 
 class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "SpaceInvaders";
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint (x: 520, y: 725)
         
+        myLabel.text = "BreakfastInvaders";
+        myLabel.fontSize = 40
+        myLabel.position = CGPoint (x: 510, y: 725)
         self.addChild(myLabel)
+        
+// __________________________________________________________________________________________________
+        
+        spriteEnemy1.xScale = 0.25
+        spriteEnemy1.yScale = 0.25
+        spriteEnemy1.position = CGPoint (x:520, y: 690)
+        
+        spriteEnemy2.xScale = spriteEnemy1.xScale
+        spriteEnemy2.yScale = spriteEnemy1.yScale
+        spriteEnemy2.position = CGPoint (x: 640, y: 690)
+        
+        spriteEnemy3.xScale = spriteEnemy1.xScale
+        spriteEnemy3.yScale = spriteEnemy1.yScale
+        spriteEnemy3.position = CGPoint (x: 400, y: 690)
+      
+        self.addChild(spriteEnemy1)
+        self.addChild(spriteEnemy2)
+        self.addChild(spriteEnemy3)
+        
     }
+    
+        
+        
+
+  
+// __________________________________________________________________________________________________
+        
+        
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
@@ -37,8 +78,8 @@ class GameScene: SKScene {
             
             sprite2.xScale = 0.5
             sprite2.yScale = 0.5
-            sprite2.position.x = location.x
-            sprite2.position.y = (location.y - 55)
+            sprite2.position = location
+        
             
             
          
@@ -67,3 +108,4 @@ class GameScene: SKScene {
         /* Called before each frame is rendered */
     }
 }
+ 
